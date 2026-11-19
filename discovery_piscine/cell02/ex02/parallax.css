@@ -1,0 +1,93 @@
+/* Supprime les marges par défaut du navigateur */
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.texte1 {
+    /* L'image de fond */
+  background-image: url(Designer1.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Hauteur de la section */
+  height: 100vh;    /* hauteur de l'écran */
+  height: 100svh;   /* version corrigée pour mobile (barre d'adresse) */
+
+  /* Centrer le contenu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #cc0808;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: bold;
+  text-shadow: 3px 3px 4px rgb(255, 255, 255);
+}
+
+.texte2 {
+  z-index: 3;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  /* L'image de fond */
+  background-color: #030303;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+
+  /* Hauteur de la section */
+  width: 100vh;    /* largeur de l'écran */
+  width: 100svh;   /* version corrigée pour mobile (barre d'adresse) */
+  height: 100vh;    /* hauteur de l'écran */
+  height: 100svh;   /* version corrigée pour mobile (barre d'adresse) */
+
+  /* Centrer le contenu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texte3 {
+    /* L'image de fond */
+  background-image: url(Designer2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Hauteur de la section */
+  height: 100vh;    /* hauteur de l'écran */
+  height: 100svh;   /* version corrigée pour mobile (barre d'adresse) */
+
+  /* Centrer le contenu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #cc0808;
+  position: sticky;
+  top: 200%;
+  z-index: 1;
+  font-weight: bold;
+  text-shadow: 3px 3px 4px rgb(255, 255, 255);
+}
