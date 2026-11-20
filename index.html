@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🍓 Ma semaine à l'école 42 – Strachberry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ciel: #fdf3e7;
+      --encre: #2b2235;
+      --doux: #6b5f73;
+      --lanterne: #c0392b;
+      --coucher: #f2a65a;
+      --carte: #ffffff;
+      --ombre: 0 10px 30px rgba(43, 34, 53, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      color: var(--encre);
+      background: var(--ciel);
+      line-height: 1.6;
+    }
+
+    /* ---------- En-tête plein écran ---------- */
+    .hero {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      height: 100vh;
+      height: 100svh;
+      background: url("assets/apercus/chihiro.jpg") center / cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px 12vh;
+      color: white;
+    }
+    .hero::before {               /* voile sombre en bas pour lire le texte */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 12, 30, 0.75), transparent 60%);
+    }
+    .hero > * { position: relative; }
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      margin: 0 0 10px;
+      line-height: 1.1;
+    }
+    .hero p { font-size: clamp(1rem, 2.4vw, 1.3rem); margin: 0; max-width: 640px; }
+    .fleche {
+      margin-top: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      animation: rebond 1.6s infinite;
+    }
+    @keyframes rebond { 50% { transform: translateY(8px); } }
+
+    /* ---------- Contenu qui monte par-dessus ---------- */
+    main {
+      position: relative;
+      z-index: 1;
+      background: var(--ciel);
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.25);
+      padding: 60px 20px 40px;
+    }
+    .conteneur { max-width: 1050px; margin: auto; }
+
+    h2 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      text-align: center;
+      margin: 0 0 12px;
+    }
+    .intro {
+      max-width: 680px;
+      margin: 0 auto 50px;
+      text-align: center;
+      color: var(--doux);
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Profil ---------- */
+    .profil {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: var(--carte);
+      border-radius: 20px;
+      box-shadow: var(--ombre);
+      padding: 24px 28px;
+      max-width: 680px;
+      margin: 0 auto 60px;
+    }
+    .profil img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .profil h3 { margin: 0 0 4px; font-family: "Fraunces", serif; font-size: 1.4rem; }
+    .profil p { margin: 0; color: var(--doux); }
+
+    /* ---------- Grille des projets ---------- */
+    .grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 26px;
+    }
+    .projet {
+      background: var(--carte);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--ombre);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s;
+    }
+    .projet:hover { transform: translateY(-6px); }
+    .projet .visuel {
+      height: 170px;
+      background-size: cover;
+      background-position: top center;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+    .projet .corps { padding: 20px 22px 24px; display: flex; flex-direction: column; flex-grow: 1; }
+    .etiquette {
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--lanterne);
+      background: #fbe4e1;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .projet h3 { margin: 0 0 8px; font-family: "Fraunces", serif; font-size: 1.3rem; }
+    .projet p { margin: 0 0 18px; color: var(--doux); flex-grow: 1; }
+    .bouton {
+      align-self: flex-start;
+      background: var(--lanterne);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 8px 14px;
+      font-size: 0.92rem;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      transition: background 0.2s;
+    }
+    .bouton:hover { background: #962d22; }
+    .bouton.discret { background: transparent; color: var(--lanterne); border: 2px solid var(--lanterne); }
+    .bouton.discret:hover { background: #fbe4e1; }
+    .boutons { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .fond-shell { background: #1e1b26; color: #7dffa1; font-family: monospace; font-size: 1.4rem !important; }
+    .fond-pong { background: linear-gradient(135deg, #0b0f1a, #24314d); }
+
+    /* ---------- Ce que j'ai appris ---------- */
+    .appris {
+      margin: 70px auto 0;
+      max-width: 760px;
+      background: var(--carte);
+      border-radius: 20px;
+      box-shadow: var(--ombre);
+      padding: 30px 34px;
+    }
+    .appris ul { margin: 0; padding-left: 1.2em; }
+    .appris li { margin-bottom: 6px; }
+
+    /* ---------- Pied de page ---------- */
+    footer {
+      position: relative;         /* passe devant l'image fixe, comme main */
+      z-index: 1;
+      background: var(--ciel);
+      text-align: center;
+      padding: 60px 20px 30px;
+      color: var(--doux);
+    }
+    .reseaux { display: flex; justify-content: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .reseaux a {
+      background: var(--encre);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+    }
+    .reseaux a:hover { background: var(--lanterne); }
+
+    @media (max-width: 600px) {
+      .profil { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>🍓 Ma semaine à l'école 42</h1>
+    <p>Une semaine de piscine Discovery, mes tout premiers programmes et mes premières pages web.</p>
+    <a href="#projets" class="fleche" aria-label="Voir les projets">↓</a>
+  </header>
+
+  <main id="projets">
+    <div class="conteneur">
+
+      <div class="profil">
+        <img src="discovery_piscine/cell02/ex03/strachberry.jpeg" alt="Strachberry">
+        <div>
+          <h3>Lucie · Strachberry</h3>
+          <p>🍓 Maman de deux petits garçons, curieuse de tout. J'aime l'univers Ghibli, la nature et les animaux.</p>
+        </div>
+      </div>
+
+      <h2>Mes projets de la semaine</h2>
+      <p class="intro">En novembre 2026, j'ai passé une semaine à l'école 42 pour découvrir le code.
+        Voici, dans l'ordre, tout ce que j'ai construit : du terminal jusqu'à mes premières pages interactives.
+        Cliquez sur une image pour voir le résultat, ou sur « Voir les fichiers » pour lire mon code.</p>
+
+      <div class="grille">
+        <article class="projet">
+          <div class="visuel fond-shell">$ ./build.sh 01 02</div>
+          <div class="corps">
+            <span class="etiquette">Jour 1 · Terminal</span>
+            <h3>Mes premiers scripts</h3>
+            <p>Apprivoiser le terminal Linux : lister et compter des fichiers, lire des arguments, créer des dossiers avec une boucle.</p>
+            <div class="boutons">
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell00" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell01/ex03/piscineweb.html" style="background-image:url('assets/resultats/piscineweb.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 2 · HTML</span>
+            <h3>Hello World et mes premières pages</h3>
+            <p>Ma toute première page web, puis des titres, des images et des liens cliquables.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell01/ex03/piscineweb.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell01" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell01/ex04/baba.html" style="background-image:url('assets/resultats/baba.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 2 · HTML</span>
+            <h3>B.A.B.A : mes boutiques préférées</h3>
+            <p>Deux boutiques en ligne présentées côte à côte dans un tableau, avec des images cliquables.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell01/ex04/baba.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell01/ex04" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell02/ex00/responsive.html" style="background-image:url('assets/resultats/responsive.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 3 · CSS</span>
+            <h3>Une page qui s'adapte</h3>
+            <p>La même page sur ordinateur et sur téléphone : les colonnes se réorganisent selon l'écran.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell02/ex00/responsive.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex00" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell02/ex01/menu.html" style="background-image:url('assets/resultats/menu.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 3 · CSS</span>
+            <h3>Prépare ton sandwich 🥪</h3>
+            <p>Un menu déroulant pour choisir ses ingrédients, sur un décor de voyage en train.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell02/ex01/menu.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex01" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell02/ex02/parallax.html" style="background-image:url('assets/resultats/parallax.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 3 · CSS</span>
+            <h3>Le Voyage de Chihiro 🏮</h3>
+            <p>Mon projet préféré : des images fixes et un rideau noir qui monte au défilement.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell02/ex02/parallax.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex02" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell02/ex03/card.html" style="background-image:url('assets/resultats/card.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 3 · CSS</span>
+            <h3>Ma carte de profil</h3>
+            <p>Une carte de visite en ligne avec ma photo, une courte présentation et mes liens.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell02/ex03/card.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex03" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell03/ex00/background.html" style="background-image:url('assets/resultats/rainbow.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 4 · JavaScript</span>
+            <h3>Rainbow Page 🌈</h3>
+            <p>Mon premier JavaScript : un bouton qui change la couleur de fond au hasard.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell03/ex00/background.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell03/ex00" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell03/ex01/balloon.html" style="background-image:url('assets/resultats/balloon.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 4 · JavaScript</span>
+            <h3>Le ballon 🎈</h3>
+            <p>Un ballon rond qui change de couleur quand on clique dessus.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell03/ex01/balloon.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell03/ex01" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <div class="visuel fond-pong">🏓</div>
+          <div class="corps">
+            <span class="etiquette">Bonus · JavaScript</span>
+            <h3>Pong, à jouer contre l'ordinateur</h3>
+            <p>Le jeu classique, avec un style Tron ou Ghibli et un mode campagne en 10 niveaux. Les enfants peuvent jouer !</p>
+            <div class="boutons">
+              <a class="bouton" href="https://strachberry13.github.io/PONG/" target="_blank" rel="noopener">Jouer</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/PONG" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="appris">
+        <h2>Ce que j'ai appris</h2>
+        <ul>
+          <li>🐚 <strong>Le terminal</strong> : naviguer, créer des fichiers et écrire des scripts bash.</li>
+          <li>🧱 <strong>HTML</strong> : construire une page avec des titres, des images, des liens, des tableaux et des formulaires.</li>
+          <li>🎨 <strong>CSS</strong> : la mise en page avec flex, les pages qui s'adaptent au téléphone et l'effet parallaxe.</li>
+          <li>⚡ <strong>JavaScript</strong> : réagir à un clic, tirer au hasard et changer les couleurs de la page.</li>
+          <li>🌱 <strong>Et surtout</strong> : que j'adore coder, et que c'est le début d'une nouvelle aventure.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="reseaux">
+      <a href="https://fr.linkedin.com/in/lucie-treust-6a2254347" target="_blank" rel="noopener">💼 LinkedIn</a>
+      <a href="https://github.com/Strachberry13" target="_blank" rel="noopener">💻 GitHub</a>
+    </div>
+    <p>Fait avec 🍓 par Lucie · Piscine Discovery 42 · Novembre 2026</p>
+  </footer>
+
+</body>
+</html>
