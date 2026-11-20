@@ -126,7 +126,8 @@
     .projet .visuel {
       height: 170px;
       background-size: cover;
-      background-position: center;
+      background-position: top center;
+      border-bottom: 1px solid #eee;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -153,7 +154,8 @@
       color: white;
       text-decoration: none;
       font-weight: 700;
-      padding: 9px 18px;
+      padding: 8px 14px;
+      font-size: 0.92rem;
       border: 2px solid transparent;
       border-radius: 25px;
       transition: background 0.2s;
@@ -224,90 +226,122 @@
 
       <h2>Mes projets de la semaine</h2>
       <p class="intro">En novembre 2026, j'ai passé une semaine à l'école 42 pour découvrir le code.
-        Voici, dans l'ordre, tout ce que j'ai construit : du terminal jusqu'aux pages animées.</p>
+        Voici, dans l'ordre, tout ce que j'ai construit : du terminal jusqu'à mes premières pages interactives.
+        Cliquez sur une image pour voir le résultat, ou sur « Voir les fichiers » pour lire mon code.</p>
 
       <div class="grille">
-
         <article class="projet">
           <div class="visuel fond-shell">$ ./build.sh 01 02</div>
           <div class="corps">
             <span class="etiquette">Jour 1 · Terminal</span>
             <h3>Mes premiers scripts</h3>
-            <p>Apprivoiser le terminal Linux : lister des fichiers, les compter, lire des arguments et créer des dossiers automatiquement avec une boucle.</p>
+            <p>Apprivoiser le terminal Linux : lister et compter des fichiers, lire des arguments, créer des dossiers avec une boucle.</p>
             <div class="boutons">
-              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell00" target="_blank" rel="noopener">Voir le code</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell00" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
 
         <article class="projet">
-          <div class="visuel" style="background-image:url('assets/apercus/web.jpg')"></div>
+          <a class="visuel" href="discovery_piscine/cell01/ex03/piscineweb.html" style="background-image:url('assets/resultats/piscineweb.jpg')" aria-label="Voir le résultat"></a>
           <div class="corps">
             <span class="etiquette">Jour 2 · HTML</span>
             <h3>Hello World et mes premières pages</h3>
-            <p>Ma toute première page web, puis des titres, des paragraphes, des images et des liens cliquables.</p>
+            <p>Ma toute première page web, puis des titres, des images et des liens cliquables.</p>
             <div class="boutons">
-              <a class="bouton" href="discovery_piscine/cell01/ex03/piscineweb.html">Ouvrir</a>
+              <a class="bouton" href="discovery_piscine/cell01/ex03/piscineweb.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell01" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
 
         <article class="projet">
-          <div class="visuel" style="background-image:url('assets/apercus/boutiques.jpg')"></div>
+          <a class="visuel" href="discovery_piscine/cell01/ex04/baba.html" style="background-image:url('assets/resultats/baba.jpg')" aria-label="Voir le résultat"></a>
           <div class="corps">
-            <span class="etiquette">HTML · Tableaux</span>
+            <span class="etiquette">Jour 2 · HTML</span>
             <h3>B.A.B.A : mes boutiques préférées</h3>
-            <p>Une page rose qui présente deux boutiques en ligne côte à côte, avec des images cliquables.</p>
+            <p>Deux boutiques en ligne présentées côte à côte dans un tableau, avec des images cliquables.</p>
             <div class="boutons">
-              <a class="bouton" href="discovery_piscine/cell01/ex04/baba.html">Ouvrir</a>
+              <a class="bouton" href="discovery_piscine/cell01/ex04/baba.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell01/ex04" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
 
         <article class="projet">
-          <div class="visuel" style="background:#fde2ec">📱</div>
+          <a class="visuel" href="discovery_piscine/cell02/ex00/responsive.html" style="background-image:url('assets/resultats/responsive.jpg')" aria-label="Voir le résultat"></a>
           <div class="corps">
-            <span class="etiquette">CSS · Responsive</span>
+            <span class="etiquette">Jour 3 · CSS</span>
             <h3>Une page qui s'adapte</h3>
-            <p>La même page sur ordinateur et sur téléphone : les colonnes se réorganisent selon la taille de l'écran.</p>
+            <p>La même page sur ordinateur et sur téléphone : les colonnes se réorganisent selon l'écran.</p>
             <div class="boutons">
-              <a class="bouton" href="discovery_piscine/cell02/ex00/responsive.html">Ouvrir</a>
+              <a class="bouton" href="discovery_piscine/cell02/ex00/responsive.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex00" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
 
         <article class="projet">
-          <div class="visuel" style="background-image:url('assets/apercus/menu.jpg')"></div>
+          <a class="visuel" href="discovery_piscine/cell02/ex01/menu.html" style="background-image:url('assets/resultats/menu.jpg')" aria-label="Voir le résultat"></a>
           <div class="corps">
-            <span class="etiquette">HTML · Formulaire</span>
+            <span class="etiquette">Jour 3 · CSS</span>
             <h3>Prépare ton sandwich 🥪</h3>
-            <p>Un menu déroulant pour choisir ses ingrédients : cornichon, tomates, jambon, fromage, salade.</p>
+            <p>Un menu déroulant pour choisir ses ingrédients, sur un décor de voyage en train.</p>
             <div class="boutons">
-              <a class="bouton" href="discovery_piscine/cell02/ex01/menu.html">Ouvrir</a>
+              <a class="bouton" href="discovery_piscine/cell02/ex01/menu.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex01" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
 
         <article class="projet">
-          <div class="visuel" style="background-image:url('assets/apercus/chihiro2.jpg')"></div>
+          <a class="visuel" href="discovery_piscine/cell02/ex02/parallax.html" style="background-image:url('assets/resultats/parallax.jpg')" aria-label="Voir le résultat"></a>
           <div class="corps">
-            <span class="etiquette">CSS · Animation</span>
+            <span class="etiquette">Jour 3 · CSS</span>
             <h3>Le Voyage de Chihiro 🏮</h3>
-            <p>Mon projet préféré : des images qui restent fixes pendant qu'un rideau noir monte au défilement.</p>
+            <p>Mon projet préféré : des images fixes et un rideau noir qui monte au défilement.</p>
             <div class="boutons">
-              <a class="bouton" href="discovery_piscine/cell02/ex02/parallax.html">Ouvrir</a>
+              <a class="bouton" href="discovery_piscine/cell02/ex02/parallax.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex02" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
 
         <article class="projet">
-          <div class="visuel" style="background:#fff0f3"><img src="discovery_piscine/cell02/ex03/strachberry.jpeg" alt="" style="width:96px;height:96px;border-radius:50%"></div>
+          <a class="visuel" href="discovery_piscine/cell02/ex03/card.html" style="background-image:url('assets/resultats/card.jpg')" aria-label="Voir le résultat"></a>
           <div class="corps">
-            <span class="etiquette">HTML · CSS</span>
+            <span class="etiquette">Jour 3 · CSS</span>
             <h3>Ma carte de profil</h3>
-            <p>Une petite carte de visite en ligne, avec ma photo de profil, une courte présentation et mes liens.</p>
+            <p>Une carte de visite en ligne avec ma photo, une courte présentation et mes liens.</p>
             <div class="boutons">
-              <a class="bouton" href="discovery_piscine/cell02/ex03/card.html">Ouvrir</a>
+              <a class="bouton" href="discovery_piscine/cell02/ex03/card.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell02/ex03" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell03/ex00/background.html" style="background-image:url('assets/resultats/rainbow.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 4 · JavaScript</span>
+            <h3>Rainbow Page 🌈</h3>
+            <p>Mon premier JavaScript : un bouton qui change la couleur de fond au hasard.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell03/ex00/background.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell03/ex00" target="_blank" rel="noopener">Les fichiers</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="projet">
+          <a class="visuel" href="discovery_piscine/cell03/ex01/balloon.html" style="background-image:url('assets/resultats/balloon.jpg')" aria-label="Voir le résultat"></a>
+          <div class="corps">
+            <span class="etiquette">Jour 4 · JavaScript</span>
+            <h3>Le ballon 🎈</h3>
+            <p>Un ballon rond qui change de couleur quand on clique dessus.</p>
+            <div class="boutons">
+              <a class="bouton" href="discovery_piscine/cell03/ex01/balloon.html">Voir le résultat</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/Discovery_piscine/tree/main/discovery_piscine/cell03/ex01" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
@@ -320,11 +354,10 @@
             <p>Le jeu classique, avec un style Tron ou Ghibli et un mode campagne en 10 niveaux. Les enfants peuvent jouer !</p>
             <div class="boutons">
               <a class="bouton" href="https://strachberry13.github.io/PONG/" target="_blank" rel="noopener">Jouer</a>
-              <a class="bouton discret" href="https://github.com/Strachberry13/PONG" target="_blank" rel="noopener">Le code</a>
+              <a class="bouton discret" href="https://github.com/Strachberry13/PONG" target="_blank" rel="noopener">Les fichiers</a>
             </div>
           </div>
         </article>
-
       </div>
 
       <section class="appris">
@@ -333,6 +366,7 @@
           <li>🐚 <strong>Le terminal</strong> : naviguer, créer des fichiers et écrire des scripts bash.</li>
           <li>🧱 <strong>HTML</strong> : construire une page avec des titres, des images, des liens, des tableaux et des formulaires.</li>
           <li>🎨 <strong>CSS</strong> : la mise en page avec flex, les pages qui s'adaptent au téléphone et l'effet parallaxe.</li>
+          <li>⚡ <strong>JavaScript</strong> : réagir à un clic, tirer au hasard et changer les couleurs de la page.</li>
           <li>🌱 <strong>Et surtout</strong> : que j'adore coder, et que c'est le début d'une nouvelle aventure.</li>
         </ul>
       </section>
