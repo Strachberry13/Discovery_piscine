@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="background.css">
+    <title>🌈Rainbow Page🌈</title>
+    <style>
+        body {
+            background-color: white;
+            transition: background-color 0.5s ease-in-out;
+        } </style>
+</head>
+<body> 
+    <section class="texte1">
+    <h1>🌈 Rainbow Page 🌈</h1>
+    <button style="background-color: #ffffff; font: Roboto, sans-serif; color: rgb(0, 0, 0);border: 1px solid #ccc; padding: 10px 20px; font-size: 28px;" onclick="changeBackgroundColor()">Changez la couleur !</button>
+    <script>
+        const colors = ['#FFB9C1', '#FFD700', '#ADFF2F', '#00CED1', '#9370DB', '#FF69B4', '#FFA500', '#00FF7F'];
+        function changeBackgroundColor() {
+            const index= Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[index];
+        }
+    </script></section>
+</body>
+</html>

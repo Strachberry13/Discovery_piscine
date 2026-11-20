@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎈Balloon🎈</title>
+    <style>
+        body { 
+            height: 100svh;
+            height: 100vh;
+            background-color:#ffffff;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            display: flex;
+            top: 0
+             }
+
+            .balloon {
+            cursor: pointer;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;      
+            background-color:#f10000;
+            transition: background-color 0.5s ease-in-out;
+        } </style>
+</head>
+<body> 
+        <section class="balloon" onclick="changeColor()">
+        <script>
+        const colors = ['#FFB9C1', '#FFD700', '#ADFF2F', '#00CED1', '#9370DB', '#FF69B4', '#FFA500', '#00FF7F'];
+        function changeColor() { 
+            const balloon = document.querySelector(".balloon");     
+            const index= Math.floor(Math.random() * colors.length);
+            balloon.style.backgroundColor = colors[index];
+        }
+    </script></section>
+</body>
+</html>
